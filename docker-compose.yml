@@ -1,0 +1,44 @@
+version: "3.9"
+
+networks: 
+  backend: 
+
+services: 
+  redis: 
+    image: redis:7.0.10-alpine3.17
+    ports:
+      - "6379:6379"
+    networks: 
+      backend: 
+        aliases: 
+          - db-redis 
+    container_name: redis
+  
+  # celery:
+  #   build: 
+  #     context: .
+  #   environment: 
+  #     BACKEND: ${BACKEND}
+  #     BROKER: ${BROKER}
+  #   entrypoint: celery -A upscale_task.celery worker --loglevel=info
+  #   depends_on: 
+  #     - redis 
+  #   networks: 
+  #     backend:
+  #   volumes:
+  #     - ./:/app
+  
+  # app: 
+  #   build:
+  #     context: . 
+  #   environment: 
+  #     BACKEND: ${BACKEND}
+  #     BROKER: ${BROKER}
+  #   entrypoint: python flask_app.py 
+  #   depends_on:
+  #     - redis 
+  #   networks: 
+  #     backend:
+  #   container_name: upscaling_app
+  #   volumes: 
+  #     - ./:/app
