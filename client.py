@@ -6,7 +6,7 @@ import time
 FILE_NAME = 'lama_600px.png'
 
 resp = requests.post('http://127.0.0.1:5000/upscale', json={
-    'input_path': os.path.join('example', 'lama_300px.png'),
+    'input_path': os.path.join('example', 'cat_300px.png'),
     'output_path': os.path.join('results', FILE_NAME)
 })
 resp_data = resp.json()

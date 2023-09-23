@@ -43,7 +43,7 @@ def upscale(input_path: str, output_path: str) -> None:
 
 
 def example():
-    upscale(os.path.join('example', 'lama_300px.png'), os.path.join('results', 'lama_600px.png'))
+    upscale(os.path.join('example', 'cat_300px.png'), os.path.join('results', 'cat_600px.png'))
 
 
 if __name__ == '__main__':

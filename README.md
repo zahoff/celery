@@ -22,7 +22,7 @@ celery -A upscale_task.celery worker --loglevel=info
 {'link': 'link is not ready yet', 'status': 'PENDING'}
 {'link': 'link is not ready yet', 'status': 'PENDING'}
 {'link': 'link is not ready yet', 'status': 'PENDING'}
-{'link': 'http://127.0.0.1:5000/processed/lama_600px.png', 'status': 'SUCCESS'}
+{'link': 'http://127.0.0.1:5000/processed/cat_600px.png', 'status': 'SUCCESS'}
 ```
 
 
